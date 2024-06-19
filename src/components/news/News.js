@@ -8,10 +8,11 @@ const News = () => {
   const [selectedCategory, setSelectedCategory] = useState("general"); // Default category
 
   const pageSize = 6; // Number of articles per page
+  const apiKey = process.env.REACT_APP_NEWS_API_KEY;
 
   const fetchData = async () => {
     try {
-      let response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${selectedCategory}&apiKey=fd214d9c3db34102a8add61bc41d9cbd`);
+      let response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${selectedCategory}&apiKey=${apiKey}`);
       if (!response.ok) {
         throw new Error(`Network response was not ok: ${response.statusText}`);
       }
@@ -19,7 +20,9 @@ const News = () => {
       const articles = data.articles;
       const totalPagesCount = Math.ceil(articles.length / pageSize);
       setTotalPages(totalPagesCount);
-      setMynews(articles.slice((currentPage - 1) * pageSize, currentPage * pageSize));
+      const startIndex = (currentPage - 1) * pageSize;
+      const endIndex = startIndex + pageSize;
+      setMynews(articles.slice(startIndex, endIndex));
     } catch (error) {
       console.error("Fetch error:", error);
     }
