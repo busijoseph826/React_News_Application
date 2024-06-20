@@ -69,33 +69,6 @@ NeighborGood is a React application developed as an assignment to display news a
 4. Click on an article to view its detailed content. Click on any article summary to view its full content, including any images or videos associated with it.
 
 
-## Folder Structure
-React_News_Application/
-├── node_modules/
-├── public/
-├── src/
-│   ├── components/
-│   │   ├── context/
-│   │   │   └── (other context-related files)
-│   │   ├── navbar.css
-│   │   ├── Navbar.js
-│   │   ├── News.css
-│   │   └── News.js
-│   ├── App.css
-│   ├── App.js
-│   ├── App.test.js
-│   ├── index.css
-│   ├── index.js
-│   ├── logo.svg
-│   ├── reportWebVitals.js
-│   └── setupTests.js
-├── .env
-├── .gitignore
-├── package-lock.json
-├── package.json
-└── README.md
-
-
 
 **Deployment**
 
