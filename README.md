@@ -44,7 +44,7 @@ NeighborGood is a React application developed as an assignment to display news a
    ```bash
    git https://github.com/busijoseph826/React_News_Application.git
    
-   cd news-app
+   cd React_News_Application
 
 2. **Install dependencies:**
         npm install
@@ -68,6 +68,38 @@ NeighborGood is a React application developed as an assignment to display news a
 
 4. Click on an article to view its detailed content. Click on any article summary to view its full content, including any images or videos associated with it.
 
+
+## Folder Structure
+React_News_Application/
+├── node_modules/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── context/
+│   │   │   └── (other context-related files)
+│   │   ├── navbar.css
+│   │   ├── Navbar.js
+│   │   ├── News.css
+│   │   └── News.js
+│   ├── App.css
+│   ├── App.js
+│   ├── App.test.js
+│   ├── index.css
+│   ├── index.js
+│   ├── logo.svg
+│   ├── reportWebVitals.js
+│   └── setupTests.js
+├── .env
+├── .gitignore
+├── package-lock.json
+├── package.json
+└── README.md
+
+
+
+**Deployment**
+
+ If you have the Subscription to the NewsApi you can use in production mode aslo like you can deploy the application on Netlify or vercel ect.. 
 
 **This project is licensed under the MIT License - see the LICENSE file for details.**
 
