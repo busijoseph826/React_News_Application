@@ -20,7 +20,7 @@ const News = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      let response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${selectedCategory}&q=${searchQuery}&apiKey=${apiKey}`);
+      let response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=${selectedCategory}&q=${searchQuery}&apiKey=${apiKey}`);
       if (!response.ok) {
         throw new Error(`Network response was not ok: ${response.statusText}`);
       }
