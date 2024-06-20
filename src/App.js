@@ -1,21 +1,24 @@
-import './App.css';
-import Navbar from './components/navbar/Navbar';
-import News from './components/news/News';
-import { Provider } from 'react-redux';
-import store from './components/store/store';
-import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter alias as Router
+// src/App.js
 
-function App() {
-  return (
-    <Provider store={store}>
-      <Router> {/* Wrap entire application with Router */}
-        <div className="App">
-          <Navbar /> {/* Render Navbar component */}
-          <News /> {/* Render News component */}
-        </div>
-      </Router>
-    </Provider>
-  );
-}
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import News from './components/News';
+import { NewsProvider } from './components/context/NewsContext';
+import './App.css';
+
+const App = () => (
+  <NewsProvider>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<News />} />
+        <Route path="/business" element={<News />} />
+        <Route path="/technology" element={<News />} />
+        <Route path="/entertainment" element={<News />} />
+      </Routes>
+    </Router>
+  </NewsProvider>
+);
 
 export default App;
